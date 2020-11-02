@@ -1,0 +1,26 @@
+﻿@model BCX_Assessment_01.ViewModels.EmployeeTasksViewModel
+@{
+    ViewData["Title"] = "Random";
+}
+
+@{
+    var className = Model.Tasks.Count > 2 ? "busy" : null;
+}
+
+<h2 class="@className">@Model.Employee.Name</h2>
+
+@if (Model.Tasks.Count == 0)
+{
+    <p>No tasks assigned</p>
+}
+else
+{
+    <ul>
+        @foreach (var task in Model.Tasks)
+        {
+            <li>@task.Name</li>
+        }
+    </ul> 
+}
+
+

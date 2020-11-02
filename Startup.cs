@@ -46,6 +46,7 @@ namespace BCX_Assessment_01
 
             app.UseAuthorization();
 
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
