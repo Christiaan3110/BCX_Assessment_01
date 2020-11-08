@@ -1,0 +1,40 @@
+﻿@model BCX_Assessment_01.EF.CasualTasks
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>CasualTasks</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CasualTask" class="control-label"></label>
+                <input asp-for="CasualTask" class="form-control" />
+                <span asp-validation-for="CasualTask" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TimeEstiamteInHours" class="control-label"></label>
+                <input asp-for="TimeEstiamteInHours" class="form-control" />
+                <span asp-validation-for="TimeEstiamteInHours" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateCompleted" class="control-label"></label>
+                <input asp-for="DateCompleted" class="form-control" />
+                <span asp-validation-for="DateCompleted" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

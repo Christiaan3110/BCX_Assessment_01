@@ -25,7 +25,7 @@ namespace BCX_Assessment_01.EF
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Name=ConnectionStrings.bcxassignmentAlias");
+                optionsBuilder.UseSqlServer("Data Source=bcxassignment01.database.windows.net;Initial Catalog=bcxassignment01;User ID=dev;Password=L!ghtswitch3110;Connect Timeout=30;Encrypt=True;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False;");
             }
         }
 

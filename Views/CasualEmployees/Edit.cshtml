@@ -1,0 +1,78 @@
+﻿@model BCX_Assessment_01.EF.CasualEmployees
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>CasualEmployees</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="CasualEmployeeId" />
+            <div class="form-group">
+                <label asp-for="CasualRoleId" class="control-label"></label>
+                <select asp-for="CasualRoleId" class="form-control" asp-items="ViewBag.CasualRoleId"></select>
+                <span asp-validation-for="CasualRoleId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Surname" class="control-label"></label>
+                <input asp-for="Surname" class="form-control" />
+                <span asp-validation-for="Surname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                @{
+                    if (Model.ProfilePicture != null)
+                    {
+                        var base64 = Convert.ToBase64String(Model.ProfilePicture);
+                        var imgSrc = String.Format("data:image/jpg;base64,{0}", base64);
+
+                        <img src="@imgSrc" ;
+                             class="rounded-circle"
+                             height="60" width="60"
+                             asp-append-version="true" />
+                    }
+                    else
+                    {
+                        <label>No Profile Picture</label>
+                    }
+                }
+            </div>
+            <div class="form-group">
+                <label class="control-label"></label>
+                <input class="form-control-file" type="file" name="image" accept=".jpg" />
+            </div>
+            <div class="form-group">
+                <label asp-for="CurrentHourlyRateInZar" class="control-label"></label>
+                <input asp-for="CurrentHourlyRateInZar" class="form-control" />
+                <span asp-validation-for="CurrentHourlyRateInZar" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IsEnabled" class="control-label"></label>
+                <input asp-for="IsEnabled" class="form-control" />
+                <span asp-validation-for="IsEnabled" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
